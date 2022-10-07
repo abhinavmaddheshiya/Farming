@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<div>
+		<p id="name"></p>
+	</div>
+		<script>
+			window.onload = ()=>{
+				const url = document.location.href;
+				const params = url.split('?')[1].split('&');
+				let  data = {},temp;
+				for(let i=0;i<params.length;i++){
+					temp = params[i].split('=');
+					data[temp[0]] = temp[1];
+			}
+			let name = data.name;
+			let subject = data.subject;
+			let address = data.address;
+			let email = data.email;
+			let number = data.number;
+			let password = data.password;
+			let comment = data.comment;
+
+	document.getElementById("name").innerHTML = 
+	` 
+	<center style="border: 5px solid blue;">
+	<h3>
+		Name: ${name}
+		<hr>
+		Subject:${subject}
+		<hr>
+		Address:${address}
+		<hr>
+		Email:${email}
+		<hr>
+		Password:${password}
+		<hr>
+		Phone Number:${number}
+		<hr>
+		comment:${comment}
+	</h3>
+	</center>
+	`
+	;
+		}
+	</script>
+</body>
+</html>
